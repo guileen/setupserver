@@ -7,7 +7,7 @@ NPM_PKGS=(express mongoskin redis jade less stylus coffeescript)
 # virtualbox_bin ttf-ms-fonts
 TARGET_DIR=/tmp/abs
 BASE_DIR=/tmp/setupserver
-ABS_DIR=$BASE_DIR/abs
+ABS_DIR=$BASE_DIR/arch/abs
 F_ARG="-f"
 PAC_F_ARG="--noconfirm"
 #PAC_F_ARG=""
@@ -95,4 +95,4 @@ echo '* create symbol link for configs *'
 echo '**********************************'
 mkdir ~/.config
 # cower
-ln -s $BASE_DIR/cower ~/.config/cower
+ln -s $BASE_DIR/arch/cower ~/.config/cower
