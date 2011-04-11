@@ -3,7 +3,7 @@ REPO_PKGS="base-devel vim zsh tmux mongodb"
 # tigervnc gtk-vnc impressive
 AUR_LIBS=""
 AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm)
-NPM_PKGS=(express mongoskin redis jade less stylus coffeescript)
+
 # virtualbox_bin ttf-ms-fonts
 TARGET_DIR=/opt/abs
 BASE_DIR=/opt/setupserver
@@ -79,16 +79,7 @@ do
     cowerSy $pkg
 done
 
-echo '************************'
-echo '* install npm packages *'
-echo '************************'
-for pkg in ${NPM_PKGS[@]}
-do
-    echo '**************************'
-    echo " npm install $pkg "
-    echo '**************************'
-    npm install -g $pkg
-done
+sh $BASE_DIR/base/setup-nodejs-modules.sh
 
 echo '**********************************'
 echo '* create symbol link for configs *'
