@@ -2,7 +2,7 @@
 echo '*********************'
 echo '* copy base configs *'
 echo '*********************'
-BASE_DIR=/tmp/setupserver
+BASE_DIR=/opt/setupserver
 # sh rc
 cp -f $BASE_DIR/base/bashrc ~/.bashrc
 cp -f $BASE_DIR/base/zshrc ~/.zshrc

@@ -1,12 +1,12 @@
 #! /bin/sh
-REPO_PKGS="base-devel git vim zsh mongodb"
+REPO_PKGS="base-devel vim zsh tmux mongodb"
 # tigervnc gtk-vnc impressive
 AUR_LIBS=""
 AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm)
 NPM_PKGS=(express mongoskin redis jade less stylus coffeescript)
 # virtualbox_bin ttf-ms-fonts
-TARGET_DIR=/tmp/abs
-BASE_DIR=/tmp/setupserver
+TARGET_DIR=/opt/abs
+BASE_DIR=/opt/setupserver
 ABS_DIR=$BASE_DIR/arch/abs
 F_ARG="-f"
 PAC_F_ARG="--noconfirm"
@@ -17,15 +17,15 @@ PAC="`which pacman`"
 echo '********************'
 echo '*  packages *'
 echo '********************'
-sudo $PAC -Syu $PAC_F_ARG
+$PAC -Syu $PAC_F_ARG
 echo '********************'
 echo '* install packages *'
 echo '********************'
-sudo $PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
 echo '********************'
 echo '* check packages *'
 echo '********************'
-sudo $PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
 
 echo '********************'
 echo '*  clone  configs  *'
@@ -48,7 +48,7 @@ echo '*****************'
     mkdir -p $TARGET_DIR/cower-git
     cd $TARGET_DIR/cower-git
     wget http://aur.archlinux.org/packages/cower-git/PKGBUILD
-    makepkg -ics $PAC_F_ARG
+    makepkg -is --asroot $PAC_F_ARG
     COWER=/usr/bin/cower
 fi
 
@@ -71,7 +71,7 @@ function cowerSy {
         $COWER -d $F_ARG -t $TARGET_DIR $pkg
         cd $TARGET_DIR/$pkg
     fi
-    makepkg -is $PAC_F_ARG
+    makepkg -is --asroot $PAC_F_ARG
 }
 
 for pkg in ${AUR_PKGS[@]}
@@ -87,7 +87,7 @@ do
     echo '**************************'
     echo " npm install $pkg "
     echo '**************************'
-    sudo npm install -g $pkg
+    npm install -g $pkg
 done
 
 echo '**********************************'
