@@ -1,0 +1,4 @@
+[core]
+	execludesfile = /home/gl/.gitignore
+[color]
+	ui = auto

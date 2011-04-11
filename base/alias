@@ -1,0 +1,8 @@
+alias ls='ls --color=auto -F'
+alias ll='ls -l -S -h'
+alias pss='ps aux|grep'
+alias vnc="vncviewer -FullColor=0 -LowColorLevel=2 192.168.1.110"
+PATH=/opt/eclipse:/opt/google-appengine:/home/gl/configs/bin:$PATH
+PYTHONPATH=/home/gl/projects/clevercss3/:$PYTHONPATH
+export HAXE_LIBRARY_PATH=/opt/haxe/std
+export EDITOR=vim
