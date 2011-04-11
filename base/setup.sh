@@ -7,6 +7,7 @@ BASE_DIR=/tmp/setupserver
 cp -f $BASE_DIR/base/bashrc ~/.bashrc
 cp -f $BASE_DIR/base/zshrc ~/.zshrc
 cp -f $BASE_DIR/base/alias ~/.alias
+cp -f $BASE_DIR/base/tmux.conf ~/.tmux.conf
 
 # version control
 cp -f $BASE_DIR/base/gitconfig ~/.gitconfig
