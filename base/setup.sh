@@ -6,6 +6,7 @@ BASE_DIR=/tmp/setupserver
 # sh rc
 cp -f $BASE_DIR/base/bashrc ~/.bashrc
 cp -f $BASE_DIR/base/zshrc ~/.zshrc
+cp -f $BASE_DIR/base/alias ~/.alias
 
 # version control
 cp -f $BASE_DIR/base/gitconfig ~/.gitconfig

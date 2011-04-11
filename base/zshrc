@@ -18,7 +18,7 @@ colors
 PROMPT="%{$fg[green]%}%n%{$reset_color%}@%{$fg[blue]%}%m%{$reset_color%} %1~>"
 RPROMPT="%{$fg[blue]%}%~%{$reset_color%} %{$fg[green]%}[%?]%{$reset_color%}%{$fg[blue]%}%T%{$reset_color%}"
 
-source ~/configs/alias
+source ~/.alias
 PATH=/opt/eclipse:$PATH
 
 EDITOR=vim
