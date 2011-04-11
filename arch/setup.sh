@@ -1,5 +1,5 @@
 #! /bin/sh
-REPO_PKGS="base-devel vim zsh tmux mongodb"
+REPO_PKGS="base-devel vim zsh tmux mongodb openssh"
 # tigervnc gtk-vnc impressive
 AUR_LIBS=""
 AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm)
