@@ -1,4 +1,9 @@
 to setup a base server environment. Arch only. Node only.
+Install
+========
+run as root
+
+    wget https://github.com/guileen/setupserver/raw/master/arch/boot.sh --no-check-certificate && sh boot.sh
 
 Software
 ========
