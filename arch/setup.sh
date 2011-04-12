@@ -39,7 +39,7 @@ else
 fi
 
 sh $BASE_DIR/base/setup.sh
-
+mkdir -p $TARGET_DIR
 if [ ! -f "`which cower`" ] 
 then
 echo '*****************'
