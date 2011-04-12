@@ -1,7 +1,7 @@
 
 " call pathogen to load the plugins
 filetype off
-call pathogen#runtime_append_all_bundles()
+"call pathogen#runtime_append_all_bundles()
 filetype plugin indent on
 
 set scrolloff=5
@@ -20,11 +20,11 @@ set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gb-18030,gbk,gb2312,cp963,gb18030,big5,euc-jp,euc-kr,latin1
 
 
-set tabstop=4 " tab表示4个空格
-set shiftwidth=4 " 缩进4个空格
-set expandtab " 自动将tab展开成空格
-set softtabstop=0 " 删除空格缩进
-set smarttab " 行首按tab将自动转换为空格
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set softtabstop=0
+set smarttab
 set backspace=indent,eol,start  " more powerful backspacing
 set history=200
 set ruler
@@ -56,18 +56,17 @@ if has('gui_running')
     endif
 endif
 
-set t_Co=256
+"set t_Co=256
 
-if (v:version>=703)
-    hi ColorColumn ctermbg=236 guibg=#303030
-    "set colorcolumn=4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,80,100
-    set colorcolumn=80,100
-endif
+"if (v:version>=703)
+"    hi ColorColumn ctermbg=236 guibg=#303030
+"    "set colorcolumn=4,8,12,16,20,24,28,32,36,40,44,48,52,56,60,80,100
+"    set colorcolumn=80,100
+"endif
 
 "set cuc
 "set cul
 
-" 以 >--- 显示制表符
 set list
 set listchars=tab:>-,trail:`
 "hi SpecialKey guifg=#3a3a3a ctermfg=237
