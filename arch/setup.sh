@@ -21,11 +21,11 @@ $PAC -Syu $PAC_F_ARG
 echo '********************'
 echo '* install packages *'
 echo '********************'
-$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -S --needed $PAC_F_ARG $REPO_PKGS
 echo '********************'
 echo '* check packages *'
 echo '********************'
-$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -S --needed $PAC_F_ARG $REPO_PKGS
 
 echo '********************'
 echo '*  clone  configs  *'
