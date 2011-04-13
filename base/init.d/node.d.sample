@@ -1,0 +1,60 @@
+#!/bin/bash
+
+daemon_name=node-smaple
+daemon_script=/srv/node-smaple/app.js
+daemon_user=root
+
+# . /etc/rc.conf
+# . /etc/rc.d/functions
+
+case "$1" in
+  start)
+    stat_busy "Starting $daemon_name daemon"
+    [ -d /var/log/$daemon_name ] || ( mkdir /var/log/$daemon_name && \
+      chown $daemon_user:$daemon_user /var/log )
+    [ -d /var/run/$daemon_name ] || ( mkdir /var/run/$daemon_name && \
+      chown $daemon_user:$daemon_user /var/run )
+
+    /bin/su $daemon_user -c "/usr/bin/forever start \
+        -l /var/log/$daemon_name/forever.log \
+        -o /var/log/$daemon_name/$daemon_name.log \
+        -e /var/log/$daemon_name/$daemon_name.err \
+        -p /var/run/$daemon_name \
+        $daemon_script"
+
+    if [ $? -gt 0 ]; then
+      stat_fail
+      exit 1
+    else
+      add_daemon $daemon_name
+      stat_done
+    fi
+    ;;
+
+  stop)
+    stat_busy "Stopping $daemon_name daemon"
+    /usr/bin/forever stop $daemon_script
+    if [ $? -gt 0 ]; then
+      stat_fail
+      exit 1
+    else
+      rm_daemon $daemon_name
+      stat_done
+    fi
+    ;;
+
+  restart)
+    $0 stop
+    sleep 1
+    $0 start
+    ;;
+
+  status)
+    stat_busy "Checking $daemon_name status";
+    ck_status $daemon_name
+    ;;
+
+  *)
+    echo "usage: $0 {start|stop|restart|status}"  
+esac
+exit 0
