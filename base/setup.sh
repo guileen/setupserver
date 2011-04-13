@@ -3,6 +3,10 @@ echo '*********************'
 echo '* copy base configs *'
 echo '*********************'
 BASE_DIR=/opt/setupserver
+
+# use zsh
+chsh -s /bin/zsh
+
 # sh rc
 cp -f $BASE_DIR/base/bashrc ~/.bashrc
 cp -f $BASE_DIR/base/zshrc ~/.zshrc
