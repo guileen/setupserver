@@ -2,7 +2,7 @@
 REPO_PKGS="base-devel vim zsh tmux mongodb openssh"
 # tigervnc gtk-vnc impressive
 AUR_LIBS=""
-AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm)
+AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm gitosis-git)
 
 # virtualbox_bin ttf-ms-fonts
 TARGET_DIR=/opt/abs
