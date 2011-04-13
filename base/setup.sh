@@ -14,7 +14,8 @@ cp -f $BASE_DIR/base/alias ~/.alias
 cp -f $BASE_DIR/base/tmux.conf ~/.tmux.conf
 
 # version control
-cp -f $BASE_DIR/base/gitconfig ~/.gitconfig
+git config --global core.excludesfile ~/.gitignore
+git config --global color.ui auto
 cp -f $BASE_DIR/base/gitignore ~/.gitignore
 
 # vim

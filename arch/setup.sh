@@ -1,5 +1,5 @@
 #! /bin/sh
-REPO_PKGS="base-devel vim zsh tmux mongodb openssh"
+REPO_PKGS="base-devel vim zsh tmux openssh mongodb"
 # tigervnc gtk-vnc impressive
 AUR_LIBS=""
 AUR_PKGS=($AUR_LIBS nodejs-git redis-git nodejs-npm gitosis-git)
@@ -21,11 +21,11 @@ $PAC -Syu $PAC_F_ARG
 echo '********************'
 echo '* install packages *'
 echo '********************'
-$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -S --needed $PAC_F_ARG $REPO_PKGS
 echo '********************'
 echo '* check packages *'
 echo '********************'
-$PAC -Sy --needed $PAC_F_ARG $REPO_PKGS
+$PAC -S --needed $PAC_F_ARG $REPO_PKGS
 
 echo '********************'
 echo '*  clone  configs  *'
@@ -35,11 +35,11 @@ then
     cd $BASE_DIR
     git pull
 else
-    git clone git://github.com/guileen/config.git $BASE_DIR
+    git clone git://github.com/guileen/setupserver.git $BASE_DIR
 fi
 
 sh $BASE_DIR/base/setup.sh
-
+mkdir -p $TARGET_DIR
 if [ ! -f "`which cower`" ] 
 then
 echo '*****************'
@@ -80,10 +80,3 @@ do
 done
 
 sh $BASE_DIR/base/setup-nodejs-modules.sh
-
-echo '**********************************'
-echo '* create symbol link for configs *'
-echo '**********************************'
-mkdir ~/.config
-# cower
-ln -s $BASE_DIR/arch/cower ~/.config/cower

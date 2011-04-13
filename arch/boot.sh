@@ -5,6 +5,6 @@ then
     cd $BASE_DIR
     git pull
 else
-    git clone git://github.com/guileen/config.git $BASE_DIR
+    git clone git://github.com/guileen/setupserver.git $BASE_DIR
 fi
 $BASE_DIR/arch/setup.sh
